@@ -1,0 +1,121 @@
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Tomorrow', sans-serif;
+    height:100vh;
+  background-image: linear-gradient(to top, #2e1753, #1f1746, #131537, #0d1028, #050819);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+  }
+  .text{
+    position:absolute;
+    top:10%;
+    color:#fff;
+    text-align:center;
+    h1{
+        font-size:50px;
+      }
+  }   
+  
+  .star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:#fff;
+    right:0;
+    animation:starTwinkle 3s infinite linear;
+  }
+  .astronaut img{
+    width:100px;
+    position:absolute;
+    top:55%;
+    animation:astronautFly 6s infinite linear;
+  }
+
+
+/* курсор */
+.cursor_container cursor,
+.cursor_container .cursor2,
+.cursor_container .cursor3 {
+  position: fixed;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  pointer-events: none;
+  left: -100px;
+  top: 50%;
+  mix-blend-mode: difference;
+  -webkit-transition: all 300ms linear;
+  transition: all 300ms linear; }
+ 
+.cursor_container .cursor {
+  background-color: #fff;
+  height: 0;
+  width: 0;
+  z-index: 99999; }
+
+.cursor_container .cursor2, .cursor_container .cursor3 {
+  height: 36px;
+  width: 36px;
+  z-index: 99998;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out; }
+
+.cursor_container .cursor2.hover,
+.cursor_container .cursor3.hover {
+  -webkit-transform: scale(2) translateX(-25%) translateY(-25%);
+  transform: scale(2) translateX(-25%) translateY(-25%);
+  border: none; }
+
+.cursor_container .cursor2 {
+  border: 2px solid #fff;
+  box-shadow: 0 0 22px rgba(255, 255, 255, 0.6); }
+
+.cursor_container .cursor2.hover {
+  background: white;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2); }
+
+@media screen and (max-width: 1200px) {
+  .cursor_container .cursor, .cursor_container .cursor2, .cursor_container .cursor3 {
+    display: none; } }
+
+    
+  @keyframes astronautFly{
+    0%{
+      left:-100px;
+    }
+    25%{
+      top:50%;
+      transform:rotate(30deg);
+    }
+    50%{
+      transform:rotate(45deg);
+      top:55%;
+    }
+    75%{
+      top:60%;
+      transform:rotate(30deg);
+    }
+    100%{
+      left:110%;
+      transform:rotate(45deg);
+    }
+  }
+  @keyframes starTwinkle{
+    0%{
+       background:rgba(255,255,255,0.4);
+    }
+    25%{
+      background:rgba(255,255,255,0.8);
+    }
+    50%{
+     background:rgba(255,255,255,1);
+    }
+    75%{
+      background:rgba(255,255,255,0.8);
+    }
+    100%{
+      background:rgba(255,255,255,0.4);
+    }
+  }
